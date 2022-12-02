@@ -1,0 +1,3 @@
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/trabalhoPPC.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/ZERO_CHECK.dir
