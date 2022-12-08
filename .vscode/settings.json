@@ -7,6 +7,9 @@
     "windows.h": "c",
     "sdl_stdinc.h": "c",
     "time.h": "c",
-    "sdl_opengl.h": "c"
+    "sdl_opengl.h": "c",
+    "queue.h": "c",
+    "stdbool.h": "c",
+    "ostream": "cpp"
   }
 }
