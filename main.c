@@ -44,12 +44,11 @@ int SDL_main(int argc, char *argv[])
   int people[60];
 
   SDL_Thread *thread1, *thread2;
-  queue *fila;
-  start_queue(&fila);
-  // fila[0].value = 1;
-  add_queue(1, fila);
-  add_queue(2, fila);
-  printf("%d\n", fila->value);
+  queue fila;
+  add_queue(1, &fila);
+  add_queue(2, &fila);
+  printf("%d\n", fila);
+  // printf("%d\n", fila.head[1].value);
   // lock = SDL_CreateSemaphore(1);
   // thread1 = SDL_CreateThread((void *)print, "sum1", (void *)NULL);
   // thread2 = SDL_CreateThread((void *)print2, "sum2", (void *)NULL);

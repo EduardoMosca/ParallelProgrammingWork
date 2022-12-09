@@ -4,13 +4,21 @@
 #include <stdio.h>
 #include <malloc.h>
 
-typedef struct queue
+#define QUEUE_EMPTY -1
+
+typedef struct node
 {
   int value;
-  struct queue *next;
+  struct node *next;
+} node;
+
+typedef struct
+{
+  node *head;
+  node *tail;
 } queue;
 
-void start_queue(queue **fila);
+void start_queue(queue *fila);
 
 void add_queue(int value, queue *fila);
 

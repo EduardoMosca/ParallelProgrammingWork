@@ -1,24 +1,42 @@
 #include "queue.h"
 
-int size = 0;
-
-void start_queue(queue **fila)
+void start_queue(queue *fila)
 {
-  *fila = (queue *)malloc(sizeof(queue));
-
-  (*fila)->next = NULL;
-
-  if (*fila == NULL)
-  {
-    perror("Nao foi possivel alocar espaco na fila");
-  }
+  fila->head = NULL;
+  fila->tail = NULL;
 }
 
 void add_queue(int value, queue *fila)
 {
-  queue *aux;
-  start_queue(&aux);
-  aux->value = value;
-  (fila[size - 1]).next = aux;
-  size++;
+  node *new_node = (node *)malloc(sizeof(new_node));
+  if (new_node == NULL)
+  {
+    perror("Nao foi possivel alocar memoria");
+  }
+  new_node->value = value;
+  new_node->next = NULL;
+  if (fila->tail != NULL)
+  {
+    fila->tail->next = new_node;
+  }
+  fila->tail = new_node;
+  if (fila->head == NULL)
+  {
+    fila->head = new_node;
+  }
+}
+
+int erase_queue(queue *fila)
+{
+  if (fila->head == NULL)
+    return QUEUE_EMPTY;
+  node *tmp = fila->head;
+  int result = tmp->value;
+  fila->head = fila->head->next;
+  if (fila->head == NULL)
+  {
+    fila->tail = NULL;
+  }
+  free(tmp);
+  return result;
 }
