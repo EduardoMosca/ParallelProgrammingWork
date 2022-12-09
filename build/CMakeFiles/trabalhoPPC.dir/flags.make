@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/src -isystem /usr/include/SDL2
 
-C_FLAGS = 
+C_FLAGS = -g
 

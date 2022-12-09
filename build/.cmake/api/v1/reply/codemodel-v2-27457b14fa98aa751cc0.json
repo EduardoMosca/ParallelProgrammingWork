@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.15"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "trabalhoPPC::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-trabalhoPPC-017dd3f0e6980c8e0ff4.json",
+					"jsonFile" : "target-trabalhoPPC-Debug-ab9e62446b376794661f.json",
 					"name" : "trabalhoPPC",
 					"projectIndex" : 0
 				}

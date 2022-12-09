@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/build",
+  "command": "/usr/bin/gcc -I/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/src -isystem /usr/include/SDL2 -g -o CMakeFiles/trabalhoPPC.dir/main.c.o -c /home/eduardo/Desktop/programas/c/ParallelProgrammingWork/main.c",
+  "file": "/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/main.c"
+}
+]
