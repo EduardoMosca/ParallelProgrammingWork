@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <time.h>
 #include <SDL.h>
-#include <time.h>
 #include "src/queue.h"
 #include "src/banheiro.h"
 #include "src/pessoa.h"
@@ -89,7 +88,6 @@ int SDL_main(int argc, char *argv[])
   numero_pessoas = (int *)malloc(sizeof(int) * NUMERO_DE_GENEROS);
   tempo_de_espera = (unsigned long *)malloc(sizeof(unsigned long) * NUMERO_DE_GENEROS);
 
-  srand(time(NULL));
   for (int i = 0; i < NUMERO_DE_GENEROS; i++)
   {
     numero_pessoas[i] = NUMERO_DE_PESSOAS / NUMERO_DE_GENEROS;

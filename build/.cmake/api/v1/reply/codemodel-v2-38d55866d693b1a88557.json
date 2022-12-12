@@ -1,0 +1,372 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "trabalhoPPC",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-bb538aae8ad21ac9a14b.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-1d98a1950ea9db5caebd.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "banheiro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-banheiro-Debug-14b0ec6ed697be9d013c.json",
+					"name" : "banheiro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pessoa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pessoa-Debug-f7a4f68031ca4eaad12c.json",
+					"name" : "pessoa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "queue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-queue-Debug-ef8378aff63ab0716488.json",
+					"name" : "queue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trabalhoPPC::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trabalhoPPC-Debug-72d1f64be214a3db581b.json",
+					"name" : "trabalhoPPC",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "trabalhoPPC",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-bb538aae8ad21ac9a14b.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-1d98a1950ea9db5caebd.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "banheiro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-banheiro-Release-27a0b323dba4c5730265.json",
+					"name" : "banheiro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pessoa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pessoa-Release-4c0cd833b7f5c21275c0.json",
+					"name" : "pessoa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "queue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-queue-Release-0404ebd7594c3ac942da.json",
+					"name" : "queue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trabalhoPPC::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trabalhoPPC-Release-4b457a63df1bd95f596c.json",
+					"name" : "trabalhoPPC",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "trabalhoPPC",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-bb538aae8ad21ac9a14b.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-1d98a1950ea9db5caebd.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "banheiro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-banheiro-MinSizeRel-30e8a3c96bb9dc676a27.json",
+					"name" : "banheiro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pessoa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pessoa-MinSizeRel-b2a772166116fed0add8.json",
+					"name" : "pessoa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "queue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-queue-MinSizeRel-4d2efd5df91bcc18fff1.json",
+					"name" : "queue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trabalhoPPC::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trabalhoPPC-MinSizeRel-fa89fc4381d5900b8ff3.json",
+					"name" : "trabalhoPPC",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "trabalhoPPC",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-bb538aae8ad21ac9a14b.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-1d98a1950ea9db5caebd.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "banheiro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-banheiro-RelWithDebInfo-b1ebef44204c05a0aea4.json",
+					"name" : "banheiro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pessoa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pessoa-RelWithDebInfo-ce811c518143266b714d.json",
+					"name" : "pessoa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "queue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-queue-RelWithDebInfo-5535ce6b6a4c47f5805d.json",
+					"name" : "queue",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trabalhoPPC::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trabalhoPPC-RelWithDebInfo-6fd6561b48366db8f627.json",
+					"name" : "trabalhoPPC",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build",
+		"source" : "C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
