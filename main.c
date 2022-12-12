@@ -4,34 +4,67 @@
 #include <stdbool.h>
 #include <time.h>
 #include <SDL.h>
+#include <time.h>
 #include "src/queue.h"
+#include "src/banheiro.h"
+#include "src/pessoa.h"
 
-int cont = 0;
+#define NUMERO_DE_GENEROS 3
+#define NUMERO_DE_PESSOAS 300
+#define NUMERO_DE_BOXES 5
 
-SDL_sem *lock;
+SDL_mutex *mutex_fora_banheiro = NULL;
+SDL_mutex *mutex_dentro_banheiro = NULL;
+SDL_mutex *acesso_fila = NULL;
 
-void print(void *args)
+queue fila;
+int *numero_pessoas = NULL;
+unsigned long *tempo_de_espera = NULL;
+
+void funcao_pessoa(void *thread_id)
 {
-  while (cont < 1000000000 - 1)
-  {
-    SDL_SemWait(lock);
-    cont++;
-    // SDL_UnlockMutex(lock);
-    // printf("Valor atual thread 1: %d\n", cont);
-    SDL_SemPost(lock);
-  }
-}
+  int *id = (int *)thread_id;
 
-void print2(void *args)
-{
-  while (cont < 1000000000 - 1)
+  int genero = -1;
+  clock_t inicio, tempo_final;
+  do
   {
-    SDL_SemWait(lock);
-    cont++;
-    // SDL_UnlockMutex(lock);
-    // printf("Valor atual thread 2: %d\n", cont);
-    SDL_SemPost(lock);
-  }
+    genero = rand() % NUMERO_DE_GENEROS;
+    if (numero_pessoas[genero] > 0)
+      numero_pessoas[genero]--;
+    else
+      genero = -1;
+  } while (genero == -1);
+
+  inicio = clock();
+  pessoa_t pessoa;
+  set_id(&pessoa, *id);
+  set_genero(&pessoa, genero);
+  printf("Pessoa com ID %lu de genero %d entrou na fila\n", *id, genero);
+
+  // SDL_LockMutex(acesso_fila);
+  print_queue(&fila);
+  // SDL_UnlockMutex(acesso_fila);
+
+  while (*id != fila.head->value)
+    ;
+
+  SDL_LockMutex(mutex_dentro_banheiro);
+
+  while (!EnterRestroom(&pessoa))
+    ;
+
+  printf("Pessoa de ID %lu com genero %d saiu da fila\n", *id, get_genero(&pessoa));
+
+  // SDL_LockMutex(acesso_fila);
+  erase_queue(&fila);
+  // SDL_UnlockMutex(acesso_fila);
+
+  print_queue(&fila);
+
+  GetStall(&pessoa, &tempo_final, mutex_dentro_banheiro, mutex_fora_banheiro);
+
+  tempo_de_espera[get_genero(&pessoa)] += (inicio - tempo_final) / CLOCKS_PER_SEC;
 }
 
 #ifdef __linux__
@@ -40,22 +73,64 @@ int main(int argc, char *argv[])
 int SDL_main(int argc, char *argv[])
 #endif
 {
-  srand(time(NULL));
-  int people[60];
+  start_queue(&fila);
+  set_numero_boxes(NUMERO_DE_BOXES);
+  mutex_fora_banheiro = SDL_CreateMutex();
+  mutex_dentro_banheiro = SDL_CreateMutex();
+  acesso_fila = SDL_CreateMutex();
 
-  SDL_Thread *thread1, *thread2;
-  queue fila;
-  add_queue(1, &fila);
-  add_queue(2, &fila);
-  printf("%d\n", fila);
-  // printf("%d\n", fila.head[1].value);
-  // lock = SDL_CreateSemaphore(1);
-  // thread1 = SDL_CreateThread((void *)print, "sum1", (void *)NULL);
-  // thread2 = SDL_CreateThread((void *)print2, "sum2", (void *)NULL);
-  // SDL_WaitThread(thread1, NULL);
-  // SDL_WaitThread(thread2, NULL);
-  // SDL_DestroyMutex(lock);
-  // SDL_DestroySemaphore(lock);
-  // printf("O valor e: %d\n", cont);
+  SDL_Thread *thread_pessoas[NUMERO_DE_PESSOAS];
+  clock_t inicio, fim;
+
+  int tempo_total = 0;
+
+  srand(time(NULL));
+
+  numero_pessoas = (int *)malloc(sizeof(int) * NUMERO_DE_GENEROS);
+  tempo_de_espera = (unsigned long *)malloc(sizeof(unsigned long) * NUMERO_DE_GENEROS);
+
+  srand(time(NULL));
+  for (int i = 0; i < NUMERO_DE_GENEROS; i++)
+  {
+    numero_pessoas[i] = NUMERO_DE_PESSOAS / NUMERO_DE_GENEROS;
+    tempo_de_espera[i] = 0;
+  }
+
+  inicio = clock();
+  for (int i = 0; i < NUMERO_DE_PESSOAS; i++)
+  {
+    add_queue(i, &fila);
+    thread_pessoas[i] = SDL_CreateThread((void *)funcao_pessoa, "funcao_pessoa", (void *)&i);
+
+    SDL_Delay(1000);
+  }
+
+  for (int i = 0; i < NUMERO_DE_PESSOAS; i++)
+  {
+    SDL_WaitThread(thread_pessoas[i], NULL);
+  }
+
+  fim = clock();
+
+  tempo_total = (fim - inicio) / CLOCKS_PER_SEC;
+
+  puts("");
+
+  printf("Numero de pessoas: %d\n", NUMERO_DE_PESSOAS);
+  printf("Total de boxes: %d\n", NUMERO_DE_BOXES);
+  printf("O tempo total de execucao do programa foi: %d minutos e %d segundos\n", (tempo_total / 60), (tempo_total - (tempo_total / 60) * 60));
+  printf("Quantidade de pessoas por genero: %d\n", NUMERO_DE_PESSOAS / 3);
+  printf("Tempo de espera por genero: \n");
+  for (int i = 0; i < 3; i++)
+  {
+    printf(" | %d: %lu segundos total ", i, tempo_de_espera[i]);
+    printf("(cerca de %lf segundos por pessoa)\n", (numero_pessoas[i] * 1.0 / (NUMERO_DE_PESSOAS / 3)));
+  }
+  printf("Taxa de ocupacao do box: %.2lf\n", ((5.0 * NUMERO_DE_PESSOAS) / (tempo_total * NUMERO_DE_BOXES)));
+
+  // SDL_DestroySemaphore(mutex_fora_banheiro);
+  // SDL_DestroySemaphore(mutex_dentro_banheiro);
+  SDL_DestroyMutex(mutex_fora_banheiro);
+  SDL_DestroyMutex(mutex_dentro_banheiro);
   return 0;
 }

@@ -1,3 +1,6 @@
-/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/build/CMakeFiles/trabalhoPPC.dir
-/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/build/CMakeFiles/edit_cache.dir
-/home/eduardo/Desktop/programas/c/ParallelProgrammingWork/build/CMakeFiles/rebuild_cache.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/queue.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/banheiro.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/pessoa.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/trabalhoPPC.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/eduar/Desktop/Programacao/C/ParallelProgrammingWork/build/CMakeFiles/ZERO_CHECK.dir

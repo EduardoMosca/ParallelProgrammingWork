@@ -22,4 +22,14 @@ void start_queue(queue *fila);
 
 void add_queue(int value, queue *fila);
 
+void print_queue(queue *fila);
+
+int retorna(int a, int b);
+
+int retorna_tamanho_fila(void);
+
+int erase_queue(queue *fila);
+
+int get_head(queue *fila);
+
 #endif
