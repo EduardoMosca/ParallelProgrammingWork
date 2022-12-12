@@ -19,6 +19,6 @@ void set_genero(pessoa_t *pessoa, int genero);
 int get_genero(pessoa_t *pessoa);
 
 bool EnterRestroom(pessoa_t *pessoa);
-void GetStall(pessoa_t *pessoa, clock_t *tempo_final, SDL_mutex *mutex_dentro_banheiro, SDL_mutex *mutex_fora_banheiro);
+void GetStall(pessoa_t *pessoa, Uint32 *tempo_final, SDL_mutex *mutex_dentro_banheiro, SDL_mutex *mutex_fora_banheiro);
 
 #endif

@@ -35,11 +35,11 @@ bool EnterRestroom(pessoa_t *pessoa)
   return true;
 }
 
-void GetStall(pessoa_t *pessoa, clock_t *tempo_final, SDL_mutex *mutex_dentro_banheiro, SDL_mutex *mutex_fora_banheiro)
+void GetStall(pessoa_t *pessoa, Uint32 *tempo_final, SDL_mutex *mutex_dentro_banheiro, SDL_mutex *mutex_fora_banheiro)
 {
   while (!box_ocupado())
     ;
-  *tempo_final = clock();
+  *tempo_final = SDL_GetTicks64();
   printf("Entrou no box pessoa do genero %d\n", get_genero(pessoa));
   SDL_UnlockMutex(mutex_dentro_banheiro);
   SDL_Delay(5000);
